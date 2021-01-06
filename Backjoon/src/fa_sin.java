@@ -22,6 +22,8 @@ public class fa_sin {
 		
 		
 		
+		
+		
 		for(int i=0; i<n; i++) 
 		{
 			
