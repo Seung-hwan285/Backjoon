@@ -1,60 +1,58 @@
-import java.util.HashMap;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class fa_sin {
 
 
 	public static void main(String[] args) {
+	
 		
 		
 		
 		Scanner sc=new Scanner(System.in);
 		
+		int n=sc.nextInt();
 		
-		//테스트 케이스
-		int t=sc.nextInt();
+		String str1,str2;
 		
 		
-		while(t-->0) {
-			HashMap<String,Integer>hm=new HashMap();
+		Set<String> set=new HashSet();
+		
+		
+		
+		for(int i=0; i<n; i++) 
+		{
 			
+			str1=sc.next();
+			str2=sc.next();
 			
-			
-			
-			//입력받은 총옷의 개수
-			int n=sc.nextInt();
-			
-			
-			while(n-->0) {
-				
-			//옷 이름은 필요없음 
-			sc.next();
-			
-			
-			//옷의 종류
-			String kind=sc.next();
-			
-			
-			if(hm.containsKey(kind)) {
-				hm.put(kind, hm.get(kind)+1);
+			if(str2.equals("enter")) {
+				set.add(str1);
 			}
-			
-			else {
-				hm.put(kind, 1);
-			
-			
+			else
+			{
+				set.remove(str1);
 			}
 		}
 		
-		int res=1;
 		
-		//안입는 경우 각 종류별 옷의 개수에 +1해준값을 곱한다
-		for(int val:hm.values()) {
-			res*=(val+1);
+		//set->arr
+		String []arr=new String[set.size()];
+		
+		
+		set.toArray(arr);
+		//오름
+		Arrays.sort(arr);
+		
+		
+		//내림차순 출력
+		
+		for(int i=arr.length-1; i>=0; i--) {
+			System.out.println(arr[i]);
 		}
 		
-		//알몸인상태를 제외해주어야하므로 -1
-		System.out.println(res-1);
-		}
+
 	}
 }
