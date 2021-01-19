@@ -1,52 +1,78 @@
-import java.util.Arrays;
 import java.util.Scanner;
+
+
+//1.에라토스테네스 체 알고리즘 
 
 public class gold {
 
+	
+	
+	
+	
+	
+	public static final int MAX=10;
+	
+	//8 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+	
 	
 		
 		Scanner sc=new Scanner(System.in);
 		
 		
-		int n=sc.nextInt();
+		boolean []isprem=new boolean[MAX+1];
 		
-
 		
-		int []a=new int[n];
-		int []b=new int[n];
-		
-		for(int i=0; i<n; i++) {
-			a[i]=sc.nextInt();
-			b[i]=sc.nextInt();
+		for(int i=2; i<=MAX; i++) {
+			isprem[i]=true;
 		}
 		
-		Arrays.sort(a);
-		Arrays.sort(b);
-		
-		
-		int sum=0;
-		//0,1,2
-		for(int i=0; i<n; i++) {
+		for(int i=2; i<=MAX; i++) {
 			
-			//a[i]=6
-			//b[i]=1
-			
-			//a[i]=1
-			//b[i]=2
-			
-			
-			//a[i]=1
-			//b[i]=3
-			sum+=a[i]*b[n-1-i];
+			//2 
+			//4
+			//8
+			//10 
+			for(int j=i*2; j<=MAX; j+=i) {
+				//fasle라면
+				if(!isprem[j]) {
+					continue;
+				}
+				
+				//true라면
+				isprem[j]=false;
+			}
 		}
 		
 		
-		System.out.println(sum);
 		
-	
+		
+		while(true) {
+			int n=sc.nextInt();
+			
+			boolean ok=false;
+			
+			
+			if(n==0) {
+				break;
+			}
+			
+			
+			
+			for(int i=2; i<=n/2; i++) {
+				if(isprem[i] && isprem[n-i]) {
+					System.out.println(n+" = "+i+" + "+(n-i));
+					ok=true;
+					break;
+				}
+			}
+			
+			if(!ok) {
+				System.out.println("Goldbach's conjecture is wrong");
+			}
+		}
+		
 	}
-
+	
 }
