@@ -1,34 +1,40 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class Main {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public static void main(String args[]) throws Exception {
+      
+            
 
 
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 		
-		Scanner sc=new Scanner(System.in);
 		
-		char c[][]=new char[5][15];
 		
-		for(int i=0; i<c.length; i++) {
-			String s=sc.next();
+		String str=br.readLine();
+		
+		char ch[]=str.toCharArray();
+		
+		
+		for(int i=0; i<str.length(); i++) {
+			if(95<=ch[i] && ch[i]<=122) {
+				ch[i]=(char)(ch[i]-32);
+				continue;
+			}
 			
-			for(int j=0; j<s.length(); j++) {
-				c[i][j]=s.charAt(j);
+			if(65 <=ch[i] && ch[i] <=90) {
+				ch[i]=(char)(ch[i]+32);
+				continue;
 			}
 		}
 		
+		System.out.println(ch);
+			
 		
-		for(int i=0; i<15; i++) {
-			for(int j=0; j<5; j++) {
-				if(c[j][i]==' '|| c[j][i]=='\0') {
-					continue;
-				}
-				
-				System.out.print(c[j][i]);
-			}
-		}
+
+		
 		
 	}
 
