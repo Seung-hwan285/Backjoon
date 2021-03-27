@@ -12,6 +12,8 @@ public class bronze_5532 {
 	
 		
 		
+		
+		
 		Scanner sc=new Scanner(System.in);
 		
 		
