@@ -9,8 +9,7 @@ public class bronze_5532 {
 		
 	
 	
-	
-		
+
 		
 		
 		
