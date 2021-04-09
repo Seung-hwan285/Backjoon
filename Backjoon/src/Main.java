@@ -1,41 +1,46 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.Scanner;
+
+
+class ab_sum{
+	private int a;
+	
+	int sum=0;
+	public ab_sum(int i) {
+	
+		this.a=i;
+	
+		
+		
+	
+	}
+	
+	public int ab_sum1() {
+		return a+sum;
+	}
+	
+	
+	
+}
 
 public class Main {
 
-	public static void main(String args[]) throws Exception {
-      
-            
-
-
-		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-		
-		
-		
-		String str=br.readLine();
-		
-		char ch[]=str.toCharArray();
-		
-		
-		for(int i=0; i<str.length(); i++) {
-			if(95<=ch[i] && ch[i]<=122) {
-				ch[i]=(char)(ch[i]-32);
-				continue;
-			}
-			
-			if(65 <=ch[i] && ch[i] <=90) {
-				ch[i]=(char)(ch[i]+32);
-				continue;
-			}
-		}
-		
-		System.out.println(ch);
-			
-		
+	
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 
 		
+		Scanner sc=new Scanner(System.in);
 		
+		int n=sc.nextInt();
+		
+		ab_sum[] a=new ab_sum[n];
+	
+
+		
+	
 	}
+	
 
 }
